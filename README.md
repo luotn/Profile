@@ -4,10 +4,10 @@ This is just a tool for me to introduce myself, there is not use for you.
 
   # TODO
   Formating:
-  * Solve desktop formating
-  * Fix icon grid misalignment
+  - [ ] Solve desktop formating
+  - [ ] Fix icon grid misalignment
   
   Feature
-  * Showcase gallery
-  * Automate image processing
-  * Restful media viewer
+  - [ ] Showcase gallery
+  - [ ] Automate image processing
+  - [ ] Restful media viewer
