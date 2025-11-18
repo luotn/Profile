@@ -1,0 +1,50 @@
+{
+    "pages": {
+        "index":{
+            "title": {
+                "zh-Hans": "天宁的主页",
+                "en": "Tianning's Website"
+            },
+            "id": {
+                "brand": {
+                    "zh-Hans": "天宁简介",
+                    "en": "Tianning's Info"
+                },
+                "wechat": {
+                    "zh-Hans": "微信",
+                    "en": "WeChat",
+                    "type": "modal",
+                    "src": "img/wechat.JPG",
+                    "hint": {
+                        "zh-Hans": "按住保存并在微信中扫描。",
+                        "en": "Hold to save, scan in WeChat."
+                    }
+                },
+                "phone": {
+                    "zh-Hans": "电话",
+                    "en": "Call",
+                    "type": "simple",
+                    "href": "tel:+447410115620"
+                },
+                "contact": {
+                    "zh-Hans": "添加联系人",
+                    "en": "Add Contact",
+                    "type": "simple",
+                    "href": "./files/tianning.vcf"
+                },
+                "douyin": {
+                    "zh-Hans": "抖音",
+                    "en": "Douyin",
+                    "type": "simple",
+                    "href": "https://v.douyin.com/eYJgswK/"
+                },
+                "photos": {
+                    "zh-Hans": "照片集",
+                    "en": "Photos",
+                    "type": "simple",
+                    "href": "./src/gallery.html"
+                }
+            }
+        }
+    }
+}
