@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="../css/common.css" rel="stylesheet">
+</head>
+
+<body onload="init('portfolio')">
+    <!-- navbar -->
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="navbar-brand" id="brand">
+            Portfolio
+        </div>
+        <div class="justify-content-end" onclick="changeLanguage('portfolio')" id="languageSelector"
+            style="color: white;"><a id="en">En</a> / <a id="zh-Hans">中</a></div>
+    </nav>
+
+    <div class="container text-center">
+        <div id="collection" class="row justify-content-center row-cols-1 row-cols-lg-2 row-cols-xl-2 g-2 w-100">
+
+            <div class="col">
+                <div class="card">
+                    <img src="../img/virtualMuseum.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="virtualMuseum">Virtual Museum</h5>
+                        <p class="card-text" id="virtualMuseumDescription">Virtual Museum, but this description might be very very long...</p>
+                        <a href="https://luotn.github.io/virtualMuseum/index.html" target="_blank" class="btn btn-primary visit">Visit</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="../img/virtualMuseum.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="virtualMuseum">Virtual Museum</h5>
+                        <p class="card-text" id="virtualMuseumDescription">Virtual Museum, but this description might be very very long...</p>
+                        <a href="https://luotn.github.io/virtualMuseum/index.html" target="_blank" class="btn btn-primary visit">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 尾注 -->
+    <div id="footer">
+        Ⓒ2025 Tianning Digital
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

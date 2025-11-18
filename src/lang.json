@@ -1,6 +1,6 @@
 {
     "pages": {
-        "index":{
+        "index": {
             "title": {
                 "zh-Hans": "天宁的主页",
                 "en": "Tianning's Website"
@@ -14,10 +14,10 @@
                     "zh-Hans": "微信",
                     "en": "WeChat",
                     "type": "modal",
-                    "src": "img/wechat.JPG",
+                    "body": "<img class='modalImg' src='./img/wechat.JPG'>",
                     "hint": {
-                        "zh-Hans": "按住保存并在微信中扫描。",
-                        "en": "Hold to save, scan in WeChat."
+                        "zh-Hans": "保存图片并在微信中扫描。",
+                        "en": "Save image and scan in WeChat."
                     }
                 },
                 "phone": {
@@ -43,7 +43,78 @@
                     "en": "Photos",
                     "type": "simple",
                     "href": "./src/gallery.html"
+                },
+                "portfolio": {
+                    "zh-Hans": "作品集",
+                    "en": "Portfolio",
+                    "type": "simple",
+                    "href": "./src/portfolio.html"
+                },
+                "minecraft": {
+                    "zh-Hans": "我的世界",
+                    "en": "Minecraft",
+                    "type": "modal",
+                    "body": "luotn.club",
+                    "hint": {
+                        "zh-Hans": "添加到多人游戏中：",
+                        "en": "Add server to multiplayer:"
+                    }
                 }
+            }
+        },
+        "gallery": {
+            "title": {
+                "zh-Hans": "照片集",
+                "en": "Gallery"
+            },
+            "id": {
+                "brand": {
+                    "zh-Hans": "天宁拍摄的照片",
+                    "en": "Photos by Tianning"
+                }
+            }
+        },
+        "portfolio": {
+            "title": {
+                "zh-Hans": "天宁的作品集",
+                "en": "Tianning's Portfolio"
+            },
+            "id": {
+                "brand": {
+                    "zh-Hans": "天宁作品集",
+                    "en": "Jerry's Portfolio"
+                },
+                "virtualMuseum": {
+                    "zh-Hans": "虚拟博物馆",
+                    "en": "Virtual Museum",
+                    "description": {
+                        "zh-Hans": "和<b>中国民族博物馆</b>合作的<b>东伦敦大学</b>本科毕业项目，应用了<b>摄影测量法</b>和<b>AR+VR</b>技术。实现了自己开发的<b>模型生成</b>程序，自动通过照片生成三维模型，并可直接用于展示。可以在支持的设备上将模型叠加到真实世界中观看。",
+                        "en": "<b>University of East London</b> undergraduate dissertation project in collbration with <b>Chinese National Museum of Ethology</b>, implemented <b>photogrammetry</b> algorithm and <b>AR+VR</b> technology. Includes self-developed <b>model generation</b> program to create 3D models from photos, which models can be directally used in showcase. This demo can view models in real world with supported devices."
+                    },
+                    "href": "https://luotn.github.io/virtualMuseum/index.html"
+                },
+                "pathfinding": {
+                    "zh-Hans": "WebGPU驱动的寻路算法可视化",
+                    "en": "Pathfinding Algorithm Visulisation with WebGPU",
+                    "description": {
+                        "zh-Hans": "<b>伦敦国王学院</b>研究生毕业项目，使用了前沿<b>WebGPU</b>技术对<b>寻路算法问题</b>进行可视化。包含了WebGPU中的<b>着色器编程</b>，并支持自定义迷宫大小、起/终点位置等。在支持的设备上可以通过GPU加速获得约30%的效率提升。",
+                        "en": "<b>King's College London</b> postgraduate dissertation project. Uses the new development of <b>WebGPU</b> to visulize <b>pathfinding algorithm</b>s. Includes WebGPU <b>shader programming</b>, and supports full maze customization. 30% performance improvement with GPU rendering on supported devices."
+                    },
+                    "href": "https://luotn.github.io/ParallelPathfindingComparision/"
+                },
+                "menu": {
+                    "zh-Hans": "多语言点单/菜单系统",
+                    "en": "Multi-language Ordering/Menu System",
+                    "description": {
+                        "zh-Hans": "<b>兴趣项目</b>，解决了目前餐厅在线系统的<b>多语言支持</b>问题。",
+                        "en": "<b>Hobby prject</b>, solves lack of <b>multi-language support</b> in restaurants' online system."
+                    },
+                    "href": "https://luotn.github.io/RestaurantMultiLanguageWebsite/index.html"
+                }
+            },
+            "visit": {
+                "zh-Hans": "访问➡️",
+                "en": "Visit➡️"
             }
         }
     }

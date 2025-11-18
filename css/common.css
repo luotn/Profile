@@ -46,6 +46,12 @@
     font-size: 200%;
 }
 
+.modalImg
+{
+    max-width: 256px !important;
+    max-height: 256px !important;
+}
+
 .icon
 {
     max-width: inherit;
@@ -77,10 +83,21 @@ a
     text-align: center;
     border-top: 1px solid gray;
     background-color: white;
+    color: black;
 }
 
 #hint{
     font-size: 200%;
     text-align: center;
     padding-top: 2vw;
+}
+
+/* portfolio */
+#collection {
+    margin-top: 1%;
+    margin-bottom: 10%;
+}
+
+.card {
+    margin-right: 1%;
 }
