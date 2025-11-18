@@ -20,63 +20,57 @@
     </div>
     <div class="text-muted justify-content-end">by Tianning Luo</div>
   </nav>
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/s1.jpg" class="d-block w-100 h-30" alt="...">
+
+  <div id="spacer"></div>
+
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <!-- 微信 -->
+      <div class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5">
+        <img class="icon" src="icons/wechat.png" data-bs-toggle="modal" data-bs-target="#wechat"><br>
+        <h5 class="iconText">WeChat</a>
       </div>
-      <div class="carousel-item">
-        <img src="img/s2.jpg" class="d-block w-100" alt="...">
+      <div class="modal fade" id="wechat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">保存并在微信中扫一扫</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="img/wechat.JPG">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="img/s3.jpg" class="d-block w-100" alt="...">
-      </div>
+
+      <!-- 电话 -->
+      <a class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5" href="tel:+8615524705303">
+        <img class="icon" src="icons/phone.png"><br>
+        <h5 class="iconText">Phone</h5>
+      </a>
+
+      <!-- 联系人 -->
+      <a class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5" href="files/电话.vcf">
+        <img class="icon" src="icons/contacts.png"><br>
+        <h5 class="iconText">+ Contact</h5>
+      </a>
+
+      <!-- 抖音 -->
+      <a class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5" href="https://v.douyin.com/eYJgswK/">
+        <img class="icon" src="icons/douyin.png"><br>
+        <h5 class="iconText">Douyin</h5>
+      </a>
+
+      <!-- 摄影作品 -->
+      <a class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5" href="gallery.html">
+        <img class="icon" src="icons/photos.png"><br>
+        <h5 class="iconText">Photos</h5>
+      </a>
     </div>
   </div>
 
-  <div id="imhere"></div>
-
-  <!-- 微信 -->
-  <img id="item-logo" src="img/wechatlogo.png" data-bs-toggle="modal" data-bs-target="#wechat"
-    style="margin-left: 5vw;">
-  <div class="modal fade" id="wechat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">保存并在微信中扫一扫</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img src="img/wechat.JPG" style="height: 47vw;">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 电话 -->
-  <a href="tel:+8615524705303"><img id="item-logo" src="img/phone.png"></a>
-
-  <!-- 联系人 -->
-  <a href="files/电话.vcf"><img id="item-logo" src="img/contact.png"></a>
-
-  <!-- 网易云 -->
-  <a href="https://y.music.163.com/m/user?id=300133883" target="_blank"><img id="item-logo" src="img/wangyiyun.png"></a>
-
-  <!-- 抖音 -->
-  <a href="https://v.douyin.com/eYJgswK/" style="margin-left: 5vw;"><img id="item-logo" src="img/douyin.png"></a>
-
-  <!-- 摄影作品 -->
-  <a href="gallery.html" target="_blank"><img id="item-logo" src="img/photos.png"></a>
-
-  <div id="imhere"></div>
+  <div id="spacer"></div>
 
   <!-- 尾注 -->
   <div id="footer">

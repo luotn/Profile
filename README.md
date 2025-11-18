@@ -5,8 +5,8 @@ This is just a tool for me to introduce myself, there is nothing here for you.
 
 # TODO
 Formating:
-- [ ] Solve desktop formating
-- [ ] Fix icon grid misalignment
+- [x] Solve desktop formating
+- [x] Fix icon grid misalignment
 - [ ] Refactor some maintainable parts into js
 - [ ] Publish this using pages
 

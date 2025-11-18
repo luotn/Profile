@@ -18,11 +18,6 @@
     margin-left: 1%;
 }
 
-.carousel-inner
-{
-    height: 30%;
-}
-
 .navbar
 {
     font-size: 200%;
@@ -33,16 +28,9 @@
     font-size: 100%;
 }
 
-#imhere
+#spacer
 {
     height: 5vw;
-}
-
-#item-logo
-{
-    margin-right: 5vw;
-    margin-bottom: 5vw;
-    width: 18.3vw;
 }
 
 .modal
@@ -55,9 +43,23 @@
     font-size: 200%;
 }
 
-.btn
+.icon
 {
-    font-size: 200%;
+    max-width: inherit;
+    max-height: inherit;
+    padding: 0px;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+.iconText
+{
+    width: auto;
+    justify-content: center;
 }
 
 #footer
