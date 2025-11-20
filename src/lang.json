@@ -42,13 +42,13 @@
                     "zh-Hans": "照片集",
                     "en": "Photos",
                     "type": "simple",
-                    "href": "./src/gallery.html"
+                    "href": "./gallery.html"
                 },
                 "portfolio": {
                     "zh-Hans": "作品集",
                     "en": "Portfolio",
                     "type": "simple",
-                    "href": "./src/portfolio.html"
+                    "href": "./portfolio.html"
                 },
                 "minecraft": {
                     "zh-Hans": "我的世界",

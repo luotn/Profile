@@ -1,4 +1,4 @@
-const langJSONurl = "/src/lang.json";
+const langJSONurl = "./src/lang.json";
 let langObj;
 
 async function getLangObj() {
@@ -16,7 +16,6 @@ async function getLangObj() {
 }
 
 async function init(page) {
-    alert(location.pathname)
     langObj = await getLangObj();
 
     if (page == "index") {
@@ -148,7 +147,7 @@ function addDemo() {
                 <!-- ${demo} -->
                 <div class="col">
                     <div class="card w-100 shadow-1-strong rounded mb-4">
-                        <img src="../img/${demo}.png" class="card-img-top" alt="...">
+                        <img src="./img/${demo}.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" id="${demo}">${demos[demo].en}</h5>
                             <p class="card-text" id="${demo}Description">${demos[demo].description.en}</p>
