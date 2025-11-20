@@ -1,4 +1,4 @@
-const langJSONurl = "../../src/lang.json";
+const langJSONurl = "/src/lang.json";
 let langObj;
 
 async function getLangObj() {
@@ -16,6 +16,7 @@ async function getLangObj() {
 }
 
 async function init(page) {
+    alert(location.pathname)
     langObj = await getLangObj();
 
     if (page == "index") {
