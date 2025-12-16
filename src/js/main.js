@@ -9,7 +9,7 @@ async function getLangObj() {
         }
 
         const result = await response.json();
-        return result
+        return result;
     } catch (error) {
         console.error(error.message);
     }
@@ -19,9 +19,9 @@ async function init(page) {
     langObj = await getLangObj();
 
     if (page == "index") {
-        addIcons()
+        addIcons();
     } else if (page == "portfolio") {
-        addDemo()
+        addDemo();
     }
     const defaultLang = localStorage.getItem('language');
     if (defaultLang == null) {
@@ -39,40 +39,40 @@ async function init(page) {
 function addIcons() {
     console.log("Adding icons...")
     const iconGrid = document.getElementById("iconGrid");
-    const dialogs = document.getElementById("dialogs")
-    icons = langObj.pages.index.id
+    const dialogs = document.getElementById("dialogs");
+    icons = langObj.pages.index.id;
     for (icon in icons) {
         if (icon == "brand")
-            continue
+            continue;
         else {
             if (icons[icon].type == "simple") {
-                result = document.getElementById("simple").content.cloneNode(true)
-                result.querySelector("a").href = icons[icon].href
-                result.querySelector("img").src = `icons/${icon}.png`
-                result.querySelector(".iconText").id = icon
-                result.querySelector(".iconText").textContent = icons[icon].en
+                result = document.getElementById("simple").content.cloneNode(true);
+                result.querySelector("a").href = icons[icon].href;
+                result.querySelector("img").src = `icons/${icon}.png`;
+                result.querySelector(".iconText").id = icon;
+                result.querySelector(".iconText").textContent = icons[icon].en;
             } else if (icons[icon].type == "modal") {
-                result = document.getElementById("modal").content.cloneNode(true)
-                result.querySelector("div").setAttribute('onClick', `document.getElementById('${icon}Dialog').showModal()`)
-                result.querySelector(".icon").src = `icons/${icon}.png`
-                result.querySelector(".iconText").id = icon
-                result.querySelector(".iconText").textContent = icons[icon].en
+                result = document.getElementById("modal").content.cloneNode(true);
+                result.querySelector("div").setAttribute('onClick', `document.getElementById('${icon}Dialog').showModal()`);
+                result.querySelector(".icon").src = `icons/${icon}.png`;
+                result.querySelector(".iconText").id = icon;
+                result.querySelector(".iconText").textContent = icons[icon].en;
 
-                resultDialog = document.getElementById("modalDialog").content.cloneNode(true)
-                resultDialog.querySelector("dialog").id = icon + "Dialog"
-                resultDialog.querySelector("dialog").setAttribute("onClick", `document.getElementById('${icon}Dialog').close()`)
-                resultDialog.querySelector("h5").id = icon + "Hint"
-                resultDialog.querySelector(".modal-body").innerHTML = `${icons[icon].body}`
+                resultDialog = document.getElementById("modalDialog").content.cloneNode(true);
+                resultDialog.querySelector("dialog").id = icon + "Dialog";
+                resultDialog.querySelector("dialog").setAttribute("onClick", `document.getElementById('${icon}Dialog').close()`);
+                resultDialog.querySelector("h5").id = icon + "Hint";
+                resultDialog.querySelector(".modal-body").innerHTML = `${icons[icon].body}`;
 
-                dialogs.appendChild(resultDialog)
+                dialogs.appendChild(resultDialog);
             }
         }
-        iconGrid.appendChild(result)
+        iconGrid.appendChild(result);
     }
 }
 
 function changeToSetLanguage(page) {
-    changeTo(localStorage.getItem('language'), page)
+    changeTo(localStorage.getItem('language'), page);
 }
 
 function changeLanguage(page) {
@@ -95,27 +95,27 @@ function changeTo(lang, page) {
     // Find the page
     for (const i in target) {
         if (i == page)
-            target = target[i]
+            target = target[i];
     }
 
     // Change page title
-    document.title = target.title[lang]
+    document.title = target.title[lang];
 
     // Change language for id elements
     for (let key in target.id) {
-        document.getElementById(`${key}`).innerHTML = `${target.id[key][lang]}`
+        document.getElementById(`${key}`).innerHTML = `${target.id[key][lang]}`;
         if (page == "index" && target.id[key].type == "modal") {
-            document.getElementById(`${key}Hint`).innerHTML = `${target.id[key].hint[lang]}`
+            document.getElementById(`${key}Hint`).innerHTML = `${target.id[key].hint[lang]}`;
         } else if (page == "portfolio" && key != "brand") {
-            document.getElementById(`${key}Description`).innerHTML = `${target.id[key].description[lang]}`
+            document.getElementById(`${key}Description`).innerHTML = `${target.id[key].description[lang]}`;
         }
     }
 
     // Change visit button for portfolio
     if (page == "portfolio") {
-        let visitElements = document.getElementsByClassName("visit")
+        let visitElements = document.getElementsByClassName("visit");
         for (let i = 0; i < visitElements.length; i++) {
-            visitElements[i].innerHTML = target.visit[lang]
+            visitElements[i].innerHTML = target.visit[lang];
         }
     }
 }
@@ -127,21 +127,21 @@ function updateSelector(lang) {
 }
 
 function addDemo() {
-    console.log("Adding demos...")
-    demos = langObj.pages.portfolio.id
+    console.log("Adding demos...");
+    demos = langObj.pages.portfolio.id;
     for (demo in demos) {
         if (demo == "brand")
-            continue
+            continue;
         else {
-            template = document.getElementById("demo").content.cloneNode(true)
-            template.querySelector("img").setAttribute('src', `./img/${demo}.png`)
-            template.querySelector(".card-title").id = demo
-            template.querySelector(".card-title").textContent = demos[demo].en
-            template.querySelector(".card-text").id = demo + 'Description'
-            template.querySelector(".card-text").textContent = demos[demo].description.en
-            template.querySelector("a").href = demos[demo].href
+            template = document.getElementById("demo").content.cloneNode(true);
+            template.querySelector("img").setAttribute('src', `./img/${demo}.png`);
+            template.querySelector(".card-title").id = demo;
+            template.querySelector(".card-title").textContent = demos[demo].en;
+            template.querySelector(".card-text").id = demo + 'Description';
+            template.querySelector(".card-text").textContent = demos[demo].description.en;
+            template.querySelector("a").href = demos[demo].href;
             
         }
-        document.getElementById("collection").appendChild(template)
+        document.getElementById("collection").appendChild(template);
     }
 }
