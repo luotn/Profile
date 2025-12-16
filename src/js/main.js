@@ -65,30 +65,6 @@ function addIcons() {
                 resultDialog.querySelector(".modal-body").innerHTML = `${icons[icon].body}`
 
                 dialogs.appendChild(resultDialog)
-
-                // result.querySelector(".modal-title").id = `#${icon}Hint`
-                // result.querySelector(".modal-body").innerHTML = icons[icon].body
-
-                // modalHint = icon + "Hint"
-                // temp = `
-                //     <div class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5">
-                //         <img class="icon" src="icons/${icon}.png" data-bs-toggle="modal" data-bs-target="#${icon}Modal"><br>
-                //         <h5 class="iconText" id="${icon}">${icons[icon].en}</a>
-                //     </div>
-                //     <div class="modal fade" id="${icon}Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                //         <div class="modal-dialog modal-xl modal-dialog-centered">
-                //             <div class="modal-content">
-                //                 <div class="modal-header">
-                //                     <h5 class="modal-title" id="${modalHint}">Save and scan in WeChat</h5>
-                //                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                //                 </div>
-                //                 <div class="modal-body">
-                //                     ${icons[icon].body}
-                //                 </div>
-                //             </div>
-                //         </div>
-                //     </div>
-                //     `
             }
         }
         iconGrid.appendChild(result)
@@ -152,26 +128,20 @@ function updateSelector(lang) {
 
 function addDemo() {
     console.log("Adding demos...")
-    resultHTML = ""
     demos = langObj.pages.portfolio.id
     for (demo in demos) {
         if (demo == "brand")
             continue
         else {
-            resultHTML += `
-                <!-- ${demo} -->
-                <div class="col">
-                    <div class="card w-100 shadow-1-strong rounded mb-4">
-                        <img src="./img/${demo}.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="${demo}">${demos[demo].en}</h5>
-                            <p class="card-text" id="${demo}Description">${demos[demo].description.en}</p>
-                            <a href="${demos[demo].href}" target="_blank" class="btn btn-primary visit">Visit</a>
-                        </div>
-                    </div>
-                </div>
-                `
+            template = document.getElementById("demo").content.cloneNode(true)
+            template.querySelector("img").setAttribute('src', `./img/${demo}.png`)
+            template.querySelector(".card-title").id = demo
+            template.querySelector(".card-title").textContent = demos[demo].en
+            template.querySelector(".card-text").id = demo + 'Description'
+            template.querySelector(".card-text").textContent = demos[demo].description.en
+            template.querySelector("a").href = demos[demo].href
+            
         }
+        document.getElementById("collection").appendChild(template)
     }
-    document.getElementById("collection").innerHTML = resultHTML
 }
