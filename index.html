@@ -28,30 +28,39 @@
     <div class="container text-center">
         <div class="row justify-content-center" id="iconGrid">
             <!-- 微信 -->
-            <div class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5">
-                <img class="icon" src="icons/wechat.png" data-bs-toggle="modal" data-bs-target="#wechat"><br>
-                <h5 class="iconText" id="wechat">WeChat</a>
-            </div>
-            <div class="modal fade" id="wechat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Save and scan in WeChat</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="./img/wechat.JPG">
-                        </div>
-                    </div>
+            <template id="modal">
+                <div class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5"
+                    onClick="document.getElementById('wechatDialog').showModal()">
+                    <img class="icon" src="icons/wechat.png"><br>
+                    <h5 class="iconText" id="wechat">WeChat</a>
                 </div>
-            </div>
+            </template>
+
 
             <!-- 电话 -->
-            <a class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5" href="tel:+8615524705303">
-                <img class="icon" src="icons/phone.png"><br>
-                <h5 class="iconText" id="phone">Phone</h5>
-            </a>
+            <template id="simple">
+                <a class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5" href="tel:+8615524705303">
+                    <img class="icon" src="icons/phone.png"><br>
+                    <h5 class="iconText" id="phone">Phone</h5>
+                </a>
+            </template>
+
         </div>
+    </div>
+
+    <div id="dialogs">
+        <template id="modalDialog">
+            <dialog id="wechatDialog" closeby="any" class="modalHint"
+                onClick="document.getElementById('wechatDialog').close()">
+                <form method="dialog" class="modalCloseForm">
+                    <button class="btn-close"></button>
+                </form>
+                <h5 id="wechatHint">Save and scan in WeChat</h5>
+                <div class="modal-body">
+                    <img src="./img/wechat.JPG">
+                </div>
+            </dialog>
+        </template>
     </div>
 
     <div id="spacer"></div>

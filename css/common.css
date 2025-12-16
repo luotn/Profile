@@ -36,15 +36,6 @@
     height: 5vw;
 }
 
-.modal
-{
-    width: 100vw;
-}
-
-.modal-title
-{
-    font-size: 200%;
-}
 
 .modalImg
 {
@@ -86,10 +77,34 @@ a
     color: black;
 }
 
-#hint{
-    font-size: 200%;
-    text-align: center;
-    padding-top: 2vw;
+dialog {
+    border: none;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    &::backdrop{
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+    }
+}
+
+dialog[open] {
+  animation: fadein 0.2s ease-in forwards;
+}
+
+@keyframes fadein{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+.modalHint {
+    max-width: min-content;
+    min-width: 50vw;
 }
 
 /* portfolio */

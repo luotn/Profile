@@ -38,46 +38,61 @@ async function init(page) {
 
 function addIcons() {
     console.log("Adding icons...")
-    resultHTML = "";
+    const iconGrid = document.getElementById("iconGrid");
+    const dialogs = document.getElementById("dialogs")
     icons = langObj.pages.index.id
     for (icon in icons) {
         if (icon == "brand")
             continue
         else {
-            resultHTML += `
-
-                    <!-- ${icon} -->`
             if (icons[icon].type == "simple") {
-                resultHTML += `
-                    <a class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5" href="${icons[icon].href}" target="_blank">
-                        <img class="icon" src="icons/${icon}.png"><br>
-                        <h5 class="iconText" id="${icon}">${icons[icon].en}</h5>
-                    </a>`
+                result = document.getElementById("simple").content.cloneNode(true)
+                result.querySelector("a").href = icons[icon].href
+                result.querySelector("img").src = `icons/${icon}.png`
+                result.querySelector(".iconText").id = icon
+                result.querySelector(".iconText").textContent = icons[icon].en
             } else if (icons[icon].type == "modal") {
-                modalHint = icon + "Hint"
-                resultHTML += `
-                    <div class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5">
-                        <img class="icon" src="icons/${icon}.png" data-bs-toggle="modal" data-bs-target="#${icon}Modal"><br>
-                        <h5 class="iconText" id="${icon}">${icons[icon].en}</a>
-                    </div>
-                    <div class="modal fade" id="${icon}Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="${modalHint}">Save and scan in WeChat</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ${icons[icon].body}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    `
+                result = document.getElementById("modal").content.cloneNode(true)
+                result.querySelector("div").setAttribute('onClick', `document.getElementById('${icon}Dialog').showModal()`)
+                result.querySelector(".icon").src = `icons/${icon}.png`
+                result.querySelector(".iconText").id = icon
+                result.querySelector(".iconText").textContent = icons[icon].en
+
+                resultDialog = document.getElementById("modalDialog").content.cloneNode(true)
+                resultDialog.querySelector("dialog").id = icon + "Dialog"
+                resultDialog.querySelector("dialog").setAttribute("onClick", `document.getElementById('${icon}Dialog').close()`)
+                resultDialog.querySelector("h5").id = icon + "Hint"
+                resultDialog.querySelector(".modal-body").innerHTML = `${icons[icon].body}`
+
+                dialogs.appendChild(resultDialog)
+
+                // result.querySelector(".modal-title").id = `#${icon}Hint`
+                // result.querySelector(".modal-body").innerHTML = icons[icon].body
+
+                // modalHint = icon + "Hint"
+                // temp = `
+                //     <div class="iconGroup col-xl-2 col-lg-3 col-md-4 col-sm-5">
+                //         <img class="icon" src="icons/${icon}.png" data-bs-toggle="modal" data-bs-target="#${icon}Modal"><br>
+                //         <h5 class="iconText" id="${icon}">${icons[icon].en}</a>
+                //     </div>
+                //     <div class="modal fade" id="${icon}Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                //         <div class="modal-dialog modal-xl modal-dialog-centered">
+                //             <div class="modal-content">
+                //                 <div class="modal-header">
+                //                     <h5 class="modal-title" id="${modalHint}">Save and scan in WeChat</h5>
+                //                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                //                 </div>
+                //                 <div class="modal-body">
+                //                     ${icons[icon].body}
+                //                 </div>
+                //             </div>
+                //         </div>
+                //     </div>
+                //     `
             }
         }
+        iconGrid.appendChild(result)
     }
-    document.getElementById("iconGrid").innerHTML = resultHTML
 }
 
 function changeToSetLanguage(page) {
